@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Lisää opiskelija</title>
 </head>
 <body>
-$END$
+<h1>Lisää opiskelija</h1>
+<form method="POST" action="http://localhost:8080/addstudent">
+    <label>Etunimi:</label><br>
+    <input type="text" name="firstName"><br>
+    <label >Sukunimi:</label><br>
+    <input type="text" name="lastName"><br><br>
+    <label>Email:</label><br>
+    <input type="text" name="email"><br>
+    <label >Puhelin:</label><br>
+    <input type="text" name="phone"><br><br>
+    <input type="submit" value="Lähetä">
+</form>
+<br>
+<form action="/index.html">
+    <input type="submit" value="Palaa pääsivulle">
+</form>
 </body>
 </html>

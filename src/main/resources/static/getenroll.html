@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Hae opiskelijat kurssilla</title>
 </head>
 <body>
-$END$
+<h1>Hae opiskelijat kurssilla</h1>
+<form method="POST" action="http://localhost:8080/enrollments">
+    <label>Kurssi ID:</label><br>
+    <input type="text" name="courseID"><br>
+    <input type="submit" value="Lähetä">
+</form>
+<br>
+<form action="/index.html">
+    <input type="submit" value="Palaa pääsivulle">
+</form>
 </body>
 </html>

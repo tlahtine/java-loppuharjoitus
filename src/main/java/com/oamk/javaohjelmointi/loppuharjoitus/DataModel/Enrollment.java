@@ -2,19 +2,20 @@ package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
 import java.util.List;
 
-public class CourseEnrollment {
+public class Enrollment {
     private int id;
     private int courseID;
-    private List<Integer> students;
+    private int studentID;
 
     private static int counter = 0;
 
-    public CourseEnrollment(int courseID, int studentID){
+    public Enrollment(int courseID, int studentID){
         this.courseID = courseID;
-        students.add(studentID);
+        this.studentID = studentID;
+        this.id = counter++;
     }
 
-    public CourseEnrollment(){
+    public Enrollment(){
         this(-1, -1);
     }
 
@@ -25,13 +26,12 @@ public class CourseEnrollment {
     public int getCourseID() {
         return courseID;
     }
-    public List<Integer> getStudents(int courseID){
-        return students;
+    public int getStudentID(){
+        return studentID;
     }
-    public void setStudents(List<Integer> students){
-        this.students = students;
+    public void setStudentID(int studentID){
+        this.studentID = studentID;
     }
-
     public void setCourseID(int courseID) {
         this.courseID = courseID;
     }

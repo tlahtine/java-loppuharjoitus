@@ -1,4 +1,4 @@
-package com.oamk.javaohjelmointi.loppuharjoitus;
+package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
 public class Student {
     private int id;
@@ -39,5 +39,9 @@ public class Student {
 
     public String getPhone() {
         return phone;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

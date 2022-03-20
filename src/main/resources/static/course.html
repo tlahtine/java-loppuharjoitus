@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Lisää koe</title>
 </head>
 <body>
-$END$
+<h1>Lisää kurssi</h1>
+<form method="POST" action="http://localhost:8080/addcourse">
+    <label>Koodi:</label><br>
+    <input type="text" name="code"><br>
+    <label >Nimi:</label><br>
+    <input type="text" name="name"><br><br>
+    <label >Laajuus:</label><br>
+    <input type="text" name="credits"><br><br>
+    <label >Opettaja:</label><br>
+    <input type="text" name="teacher"><br><br>
+    <label >Luokka*:</label><br>
+    <input type="text" name="classCode"><br><br>
+    <input type="submit" value="Lähetä">
+</form>
+<h4>*Jätä tyhjäksi mikäli kyseessä on etäkurssi</h4>
+<br>
+<form action="/index.html">
+    <input type="submit" value="Palaa pääsivulle">
+</form>
 </body>
 </html>

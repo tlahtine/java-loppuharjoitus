@@ -1,4 +1,4 @@
-package com.oamk.javaohjelmointi.loppuharjoitus;
+package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
 public abstract class Course {
     private int id;
@@ -14,7 +14,7 @@ public abstract class Course {
         this.name = name;
         this.credits = credits;
         this.teacher = teacher;
-        this.id = counter++;
+        this.id++;
     }
 
     public int getId(){
@@ -35,5 +35,9 @@ public abstract class Course {
 
     public String getTeacher() {
         return teacher;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

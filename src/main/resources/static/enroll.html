@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Lisää opiskelija kurssille</title>
 </head>
 <body>
-$END$
+<h1>Lisää opiskelija kurssille</h1>
+<form method="POST" action="http://localhost:8080/addenrollment">
+    <label>Kurssi ID:</label><br>
+    <input type="text" name="courseID"><br>
+    <label >Opiskelija ID:</label><br>
+    <input type="text" name="studentID"><br><br>
+    <input type="submit" value="Lähetä">
+</form>
+<br>
+<form action="/index.html">
+    <input type="submit" value="Palaa pääsivulle">
+</form>
 </body>
 </html>
