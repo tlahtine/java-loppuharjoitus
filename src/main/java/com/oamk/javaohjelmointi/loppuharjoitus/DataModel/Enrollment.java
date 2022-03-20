@@ -1,9 +1,7 @@
 package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
-import java.util.List;
-
 public class Enrollment {
-    private int id;
+    private final int id;
     private int courseID;
     private int studentID;
 

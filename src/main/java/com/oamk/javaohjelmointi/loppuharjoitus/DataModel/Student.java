@@ -2,10 +2,10 @@ package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
 public class Student {
     private int id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phone;
+    private final String firstName;
+    private final String lastName;
+    private final String email;
+    private final String phone;
 
     private static int counter = 0;
 

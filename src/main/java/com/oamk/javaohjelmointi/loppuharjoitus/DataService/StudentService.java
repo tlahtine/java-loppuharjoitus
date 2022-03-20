@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class StudentService {
-    private List<Student> students = new ArrayList<>();
+    private final List<Student> students;
 
     public StudentService(){
         StudentFileService studentFileService = new StudentFileService();

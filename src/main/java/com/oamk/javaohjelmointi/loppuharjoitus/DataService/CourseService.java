@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class CourseService {
-    private List<Course> courses = new ArrayList<>();
+    private List<Course> courses;
 
     public CourseService(){
         CourseFileService courseFileService = new CourseFileService();

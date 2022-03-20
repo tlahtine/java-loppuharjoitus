@@ -2,10 +2,10 @@ package com.oamk.javaohjelmointi.loppuharjoitus.DataModel;
 
 public abstract class Course {
     private int id;
-    private String code;
-    private String name;
-    private int credits;
-    private String teacher;
+    private final String code;
+    private final String name;
+    private final int credits;
+    private final String teacher;
 
     private static int counter = 0;
 
@@ -14,7 +14,7 @@ public abstract class Course {
         this.name = name;
         this.credits = credits;
         this.teacher = teacher;
-        this.id++;
+        this.id = counter++;
     }
 
     public int getId(){
