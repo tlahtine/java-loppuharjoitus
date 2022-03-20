@@ -1,2 +1,6 @@
-Teemu,Lahtinen,Teemu.Sikanauta@gmail.com,0408410002
-Hannu,Halmetoja,jaska,paska
+Teemu,Lahtinen,joojoo,1234
+Olli,Opiskelija,olli@oamk,923489
+joku,muu,klsjfd,102
+Erkki,Lesta,lestaerkki@mail.com,123094
+arska,vaan,ari,123407
+Jorma,Pitkänen,slakdfi,12847
