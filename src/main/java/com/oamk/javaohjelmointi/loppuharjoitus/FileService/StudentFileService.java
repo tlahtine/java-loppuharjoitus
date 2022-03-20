@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 @Service
 public class StudentFileService {
+    //write students to file
     public void writeStudentsToFile(List<Student> students){
         try{
             FileWriter fileWriter = new FileWriter("students.txt", false);
@@ -25,7 +26,7 @@ public class StudentFileService {
             e.printStackTrace();
         }
     }
-
+    //read students from file
     public List<Student> readStudentsFromFile(){
         List<Student> students = new ArrayList<>();
         try{

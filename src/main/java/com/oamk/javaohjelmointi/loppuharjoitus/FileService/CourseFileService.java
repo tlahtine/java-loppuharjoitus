@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 @Service
 public class CourseFileService {
+    //write courses to file
     public void writeCoursesToFile(List<Course> courses){
         try{
             FileWriter fileWriter = new FileWriter("courses.txt", false);
@@ -35,6 +36,7 @@ public class CourseFileService {
         }
     }
 
+    //read courses from file
     public List<Course> readCoursesFromFile(){
         List<Course> courses = new ArrayList<>();
         try{

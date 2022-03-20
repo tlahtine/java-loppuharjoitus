@@ -16,10 +16,12 @@ public class StudentService {
         students = studentFileService.readStudentsFromFile();
     }
 
+    //get all students
     public List<Student> getStudents() {
         return new ArrayList<>(students);
     }
 
+    //get student by id
     public Student getStudent(int id){
         Student student;
         if(id < students.size() && id >= 0){
@@ -31,6 +33,7 @@ public class StudentService {
         return student;
     }
 
+    //add student to file
     public String addStudent(Student student){
         students.add(student);
         //write to file
@@ -39,6 +42,7 @@ public class StudentService {
         return "Opiskelija lisätty";
     }
 
+    //edit student
     public String editStudent(int id, Student student){
         if(id <  students.size() && id >= 0){
             students.set(id, student);

@@ -17,28 +17,12 @@ public class CourseService {
         CourseFileService courseFileService = new CourseFileService();
         courses = courseFileService.readCoursesFromFile();
     }
-
+    //get all courses
     public List<Course> getCourses() {
         return new ArrayList<>(courses);
     }
 
-    public Course getCourse(int id){
-        Course course;
-        if(id < courses.size() && id >= 0){
-            if(courses.get(id) instanceof ClassRoomCourse){
-                course = new ClassRoomCourse();
-            }
-            else{
-                course = new OnlineCourse();
-            }
-            course = courses.get(id);
-        }
-        else{
-            course = null;
-        }
-        return course;
-    }
-
+    //add course to file
     public String addCourse(Course course){
         courses.add(course);
         //write to file
@@ -47,6 +31,7 @@ public class CourseService {
         return "Kurssi lisätty";
     }
 
+    //edit course
     public String editCourse(int id, Course course){
         if(id <  courses.size() && id >= 0){
             courses.set(id, course);

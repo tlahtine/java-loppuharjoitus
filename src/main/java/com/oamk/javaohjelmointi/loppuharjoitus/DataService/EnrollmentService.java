@@ -18,6 +18,7 @@ public class EnrollmentService {
         enrollments = enrollmentFileService.readEnrollmentsFromFile();
     }
 
+    //add student to course
     public String addStudentToCourse(int courseID, int studentID){
         StudentService studentService = new StudentService();
         List<Student> students = studentService.getStudents();
@@ -41,6 +42,7 @@ public class EnrollmentService {
         return "Opiskelija lisätty kurssille";
     }
 
+    //show students on specific course
     public String showStudentsOnCourse(int courseID){
         CourseService courseService = new CourseService();
         List<Course> courses = courseService.getCourses();

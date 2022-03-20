@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 @Service
 public class EnrollmentFileService {
+    //write enrollments to file
     public void writeEnrollmentsToFile(List<Enrollment> enrollments) {
         try {
             FileWriter fileWriter = new FileWriter("enrollments.txt", false);
@@ -24,6 +25,7 @@ public class EnrollmentFileService {
         }
     }
 
+    //read enrollments from file
     public List<Enrollment> readEnrollmentsFromFile(){
         List<Enrollment> enrollments = new ArrayList<>();
         try{
