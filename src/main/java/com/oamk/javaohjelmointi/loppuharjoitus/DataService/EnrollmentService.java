@@ -23,24 +23,10 @@ public class EnrollmentService {
         List<Student> students = studentService.getStudents();
         CourseService courseService = new CourseService();
         List<Course> courses = courseService.getCourses();
-        boolean studentExists = false;
-        for(Student student : students){
-            if(student.getId() == studentID){
-                studentExists = true;
-                break;
-            }
-        }
-        if(!studentExists){
+        if(studentID >= students.size()){
             return "Opiskelijaa ei löydy";
         }
-        boolean courseExists = false;
-        for(Course course : courses){
-            if(course.getId() == courseID){
-                courseExists = true;
-                break;
-            }
-        }
-        if(!courseExists){
+        if(courseID >= courses.size()){
             return "Kurssia ei löydy";
         }
         for(Enrollment enrollment : enrollments){
@@ -58,38 +44,26 @@ public class EnrollmentService {
     public String showStudentsOnCourse(int courseID){
         CourseService courseService = new CourseService();
         List<Course> courses = courseService.getCourses();
-        boolean courseExists = false;
-        String courseName = "";
-        for(Course course : courses){
-            if(course.getId() == courseID){
-                courseExists = true;
-                courseName = course.getName();
-                break;
-            }
-        }
-        if(!courseExists){
+        if(courseID >= courses.size()){
             return "Kurssia ei löydy";
         }
+        String courseName = courses.get(courseID).getName();
         StudentService studentService = new StudentService();
-        List<Student> students = new ArrayList<>();
+        List<Student> students = studentService.getStudents();
+        StringBuilder returnString = new StringBuilder();
+        boolean studentsExist = false;
         for(Enrollment enrollment : enrollments){
             if(enrollment.getCourseID() == courseID){
-                Student student = studentService.getStudent(enrollment.getStudentID());
-                students.add(student);
-            }
-        }
-        StringBuilder returnString = new StringBuilder();
-        if(students.size() == 0){
-            returnString.append("Kurssilla ei ole opiskelijoita");
-        }
-        else{
-            for(Student student : students){
-                returnString.append("<br><br>Opiskelija ID: ").append(student.getId());
-                returnString.append("<br>Etunimi: ").append(student.getFirstName());
+                Student student = students.get(enrollment.getStudentID());
+                returnString.append("<br><br>Etunimi: ").append(student.getFirstName());
                 returnString.append("<br>Sukunimi: ").append(student.getLastName());
                 returnString.append("<br>Sähköposti: ").append(student.getEmail());
                 returnString.append("<br>Puhelin: ").append(student.getPhone());
+                studentsExist = true;
             }
+        }
+        if(!studentsExist){
+            returnString.append("Kurssilla ei ole opiskelijoita");
         }
         return "<h2>" + courseName + "</h2>" + returnString;
     }

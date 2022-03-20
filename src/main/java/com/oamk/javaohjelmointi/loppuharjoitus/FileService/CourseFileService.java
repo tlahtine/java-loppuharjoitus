@@ -43,12 +43,10 @@ public class CourseFileService {
                 String[] course = scanner.nextLine().split(",");
                 if(course.length == 4){
                     OnlineCourse onlineCourse = new OnlineCourse(course[0], course[1], Integer.parseInt(course[2]), course[3]);
-                    onlineCourse.setId(courses.size());
                     courses.add(onlineCourse);
                 }
                 else if(course.length == 5){
                     ClassRoomCourse classRoomCourse = new ClassRoomCourse(course[0], course[1], Integer.parseInt(course[2]), course[3], course[4]);
-                    classRoomCourse.setId(courses.size());
                     courses.add(classRoomCourse);
                 }
             }

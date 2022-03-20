@@ -34,7 +34,6 @@ public class StudentFileService {
                 String[] student = scanner.nextLine().split(",");
                 if(student.length == 4){
                     Student s = new Student(student[0], student[1], student[2], student[3]);
-                    s.setId(students.size());
                     students.add(s);
                 }
             }
